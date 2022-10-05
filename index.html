@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Codificador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <style>
+    #number {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+    }
+    #buttoncod {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+    }
+    #buttondecod {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+    }
+    </style>
+</head>
+<body>
+    <form>
+<div id = conteiner>
+        <label for="txt">Mensagem:</label>
+        <input type="text" id="msg">
+    <div id = box>
+        <input type="radio" id="CS" name="cod" onclick="document.getElementById('number').style.display = 'block'">       
+        <label>Cifra de César</label>
+
+       <input type="number" id="number">
+
+        <input type="radio" id="64" name="cod">
+        <label for="64">Base64</label>
+    </div>
+    <div id = "box1">
+        <input type="radio" id="codifi" name="cod2" onclick="document.getElementById('buttoncod').style.display = 'block'">
+        <label for="codd">Codificar</label>
+
+        <input type="radio" id="decodifi" name="cod2" onclick="document.getElementById('buttondecod').style.display = 'block'">
+        <label for="dec">Decodificar</label>
+    </div>
+    <div id = "box2">
+        <input type="submit" id="buttoncod" value="Codificar" onclick="msg()">
+        <input type="submit" id="buttondecod" value="Decodificar" onclick="msg2()">
+    </div>
+    <div id = "box3">
+
+    </div>
+    <div id = "box4">
+        
+        </div>
+    </form> 
+</div>
+<script>
+
+
+
+  </script>
+</body>
+</html>
