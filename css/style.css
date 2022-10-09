@@ -1,0 +1,29 @@
+#number {
+        display:  none;
+        text-align: center;
+        margin-top: 20px;
+    }
+    #buttoncod {
+       display: none;
+        text-align: center;
+        margin-top: 20px;
+    }
+    #buttondecod {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+    }
+    #box0 {
+        display:  none;
+        text-align: center;
+        margin-top: 20px;
+    }
+    #box1 {
+       
+        text-align: center;
+        margin-top: 20px;
+    }
+#resultado {
+  display: none
+    
+}
