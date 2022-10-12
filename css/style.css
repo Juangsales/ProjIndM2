@@ -1,21 +1,22 @@
 body {
-    background: whitesmoke;
+  background-image: url(https://thumbs.gfycat.com/PointlessIdealHyena-size_restricted.gif);
     color: #363636;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10%;
 }
 
 #conteiner {
     width: auto;
     height: auto;
-    background-color: #f36969;
+    background-color: hsl(220deg 100% 72%);
     border-radius: 25px;
-    margin: 20px;
-    padding: 25px;
+    padding: 5%;
     align-items: center;
     justify-content: center;
+    box-shadow: 2.2px 4.3px 4.3px hsl(0deg 0% 0% / 0.43);
 }
 
 #number {
@@ -42,5 +43,5 @@ body {
   display: none;
 }
 #codigo {
-    display: none
+    display:none; 
 }
