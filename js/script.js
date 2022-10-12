@@ -16,8 +16,7 @@ var incrementar = addEventListener('click', function(){
     incremento.style.display  = 'block';
     } else if (codigo == "base") { 
     codiedecodi.style.display ='block';
-    
-    }
+        }
 })
 incremento.addEventListener('click', function(){
     codiedecodi.style.display = 'block';
@@ -49,6 +48,46 @@ function decBase64 () {
     return decod
 }
 
+//Função Cifra de Cesar
+var alfabeto = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+function codCesar() {
+    var codigo = msg.value;
+    var incrementado = (Number(incremento.value) % 26);
+    var codificada = '';
+
+    for(var i = 0; i < codigo.length; i++){
+       for(var j =0; j < alfabeto.length; j++){
+         if(codigo[i] == alfabeto[j]){
+           codificada += alfabeto [j + incrementado]
+           break;
+       } else if (codigo[i] == ' ') {
+           codificada += ' ';
+           break;
+       }
+      }    
+  }
+  return codificada
+  }
+
+function decCesar () {
+    var codigo = msg.value;
+    var incrementado = (Number(incremento.value) % 26)
+    var decodificada = '';
+  
+    for(var i = 0; i < codigo.length; i++){
+       for(var j = alfabeto.length - 1; j >= 0; j--){
+         if(codigo[i] == alfabeto[j]){
+           decodificada += alfabeto [j - incrementado]
+           break;
+       } else if (codigo[i] == ' ') {
+           decodificada += ' ';
+           break;
+       }
+      }       
+  }
+  return decodificada
+}
 //Aparecer mensagem codificada e decodificada
 //Codificada
 
@@ -58,9 +97,10 @@ botaocod.addEventListener('click', function(e){
     if(codificar.checked && codigo.value === "base"){
         resultado.innerText = codBase64();
         resultado.style.display = 'block'
-    } else if(codificar.checked && codigo.value === "cesar"){
-        resultado.innerText = codCesar()
+    } else if(codificar.checked && codigo.value === "cifra"){
+        resultado.innerHTML = codCesar();
         resultado.style.display = 'block'
+       
         }
     })
 //Decodificada
@@ -68,7 +108,7 @@ botaocod.addEventListener('click', function(e){
 botaodecod.addEventListener('click', function(f) {
     f.preventDefault();
     if(decodificar.checked && codigo.value === "cifra"){
-        resultado.innerText = decCesar()
+        resultado.innerText = decCesar();
         resultado.style.display = 'block'
     } else if(decodificar.checked && codigo.value === "base"){
         resultado.innerText = decBase64();
