@@ -1,25 +1,24 @@
-
 // Aparecer caixa de seleção para o metodo
 
-var msg = document.getElementById('msg')
-var metodo = document.getElementById('codigo')
+var msg = document.getElementById('mensagem')
+var metodo = document.getElementById('box')
 msg.addEventListener('click', function() {
-    metodo.style.display = 'block';
+    metodo.style.display = 'flex';
 })
 
 //Aparecer incremento para Cifra e os radios para ambos 
-var incremento = document.getElementById('number')
+var incremento = document.getElementById('numero')
 var codiedecodi = document.getElementById('box0')
 var incrementar = addEventListener('click', function(){
     var codigo = document.getElementById('codigo').value
     if (codigo == "cifra") {
-    incremento.style.display  = 'block';
+    incremento.style.display  = 'flex';
     } else if (codigo == "base") { 
-    codiedecodi.style.display ='block';
+    codiedecodi.style.display ='flex';
         }
 })
 incremento.addEventListener('click', function(){
-    codiedecodi.style.display = 'block';
+    codiedecodi.style.display = 'flex';
 })
 
 //Aparecer botão Decodificar ou Codificar
@@ -28,11 +27,11 @@ var decodificar = document.getElementById('decodifi')
 var botaocod = document.getElementById('buttoncod')
 var botaodecod = document.getElementById('buttondecod')
 codificar.addEventListener('click', function(){
-    botaocod.style.display = 'block'
+    botaocod.style.display = 'flex'
     botaodecod.style.display = 'none'
 })
 decodificar.addEventListener('click', function() {
-    botaodecod.style.display = 'block'
+    botaodecod.style.display = 'flex'
     botaocod.style.display = 'none'
 })
 
@@ -52,7 +51,7 @@ function decBase64 () {
 var alfabeto = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 function codCesar() {
-    var codigo = msg.value;
+    var codigo = document.getElementById('msg').value;
     var incrementado = (Number(incremento.value) % 26);
     var codificada = '';
 
