@@ -1,9 +1,9 @@
 // Aparecer caixa de seleção para o metodo
 
 var msg = document.getElementById('msg')
-var metodo = document.getElementById('codigo')
+var metodo = document.getElementById('box')
 msg.addEventListener('click', function() {
-    metodo.style.display = 'flex';
+    metodo.style.display = 'block';
 })
 
 //Aparecer incremento para Cifra e os radios para ambos 
