@@ -3,7 +3,7 @@
 var msg = document.getElementById('msg')
 var metodo = document.getElementById('box')
 msg.addEventListener('click', function() {
-    metodo.style.display = 'block';
+    metodo.style.display = 'flex';
 })
 
 //Aparecer incremento para Cifra e os radios para ambos 
