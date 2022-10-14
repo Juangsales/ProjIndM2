@@ -48,44 +48,47 @@ function decBase64 () {
 }
 
 //Função Cifra de Cesar
-var alfabeto = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 function codCesar() {
     var codigo = document.getElementById('msg').value;
-    var incrementado = (Number(incremento.value) % 26);
-    var codificada = '';
+    var incremento = incremento.value
 
-    for(var i = 0; i < codigo.length; i++){
-       for(var j =0; j < alfabeto.length; j++){
-         if(codigo[i] == alfabeto[j]){
-           codificada += alfabeto [j + incrementado]
-           break;
-       } else if (codigo[i] == ' ') {
-           codificada += ' ';
-           break;
-       }
-      }    
+for (i=0;i<codigo.length;i++) {
+  
+    var ascii = codigo[i].charCodeAt()
+  
+  if (ascii > 64 && ascii < 91) {
+    var palavraincrementada = ( ascii + incremento);
+    var codificada = String.fromCharCode(palavraincrementada);
+    document.write(codificada)
+  } else if (ascii > 96 && ascii < 123) {
+    var palavraincrementada = ( ascii + incremento);
+    var codificada = String.fromCharCode(palavraincrementada);
+    document.write(codificada)
+  } else {
+    document.write(codigo[i]);
   }
-  return codificada
-  }
+}
 
 function decCesar () {
-    var codigo = msg.value;
-    var incrementado = (Number(incremento.value) % 26)
-    var decodificada = '';
+        var codigo = document.getElementById('msg').value;
+    var incremento = incremento.value
+
+for (i=0;i<codigo.length;i++) {
   
-    for(var i = 0; i < codigo.length; i++){
-       for(var j = alfabeto.length - 1; j >= 0; j--){
-         if(codigo[i] == alfabeto[j]){
-           decodificada += alfabeto [j - incrementado]
-           break;
-       } else if (codigo[i] == ' ') {
-           decodificada += ' ';
-           break;
-       }
-      }       
+    var ascii = codigo[i].charCodeAt()
+  
+  if (ascii > 64 && ascii < 91) {
+    var palavraincrementada = ( ascii - incremento);
+    var codificada = String.fromCharCode(palavraincrementada);
+    document.write(codificada)
+  } else if (ascii > 96 && ascii < 123) {
+    var palavraincrementada = ( ascii - incremento);
+    var codificada = String.fromCharCode(palavraincrementada);
+    document.write(codificada)
+  } else {
+    document.write(codigo[i]);
   }
-  return decodificada
 }
 //Aparecer mensagem codificada e decodificada
 //Codificada
