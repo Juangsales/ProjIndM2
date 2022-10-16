@@ -1,3 +1,4 @@
+
 // Aparecer caixa de seleção para o metodo
 
 var msg = document.getElementById('msg')
@@ -7,18 +8,18 @@ msg.addEventListener('click', function() {
 })
 
 //Aparecer incremento para Cifra e os radios para ambos 
-var incremento = document.getElementById('numero')
+var incremento = document.getElementById('number')
 var codiedecodi = document.getElementById('box0')
-var incrementar = addEventListener('click', function(){
+var incrementar = metodo.addEventListener('click', function(){
     var codigo = document.getElementById('codigo').value
     if (codigo == "cifra") {
-    incremento.style.display  = 'flex';
+    incremento.style.display  = 'block';
     } else if (codigo == "base") { 
-    codiedecodi.style.display ='flex';
+    codiedecodi.style.display ='block';
         }
 })
 incremento.addEventListener('click', function(){
-    codiedecodi.style.display = 'flex';
+    codiedecodi.style.display = 'block';
 })
 
 //Aparecer botão Decodificar ou Codificar
@@ -27,68 +28,63 @@ var decodificar = document.getElementById('decodifi')
 var botaocod = document.getElementById('buttoncod')
 var botaodecod = document.getElementById('buttondecod')
 codificar.addEventListener('click', function(){
-    botaocod.style.display = 'flex'
+    botaocod.style.display = 'block'
     botaodecod.style.display = 'none'
 })
 decodificar.addEventListener('click', function() {
-    botaodecod.style.display = 'flex'
+    botaodecod.style.display = 'block'
     botaocod.style.display = 'none'
 })
 
 //Função Base64
 function codBase64 () {
-    var codigo = document.getElementById('msg').value
-    codi = atob(codigo)
+    var palavra = document.getElementById('msg').value
+    codi = atob(palavra)
     return codi
 }
 function decBase64 () {
-    var codigo = document.getElementById('msg').value
-    decod = btoa(codigo)
+    var palavra = document.getElementById('msg').value
+    decod = btoa(palavra)
     return decod
 }
 
 //Função Cifra de Cesar
-
 function codCesar() {
-    var codigo = document.getElementById('msg').value;
-    var incremento = incremento.value
-
-for (i=0;i<codigo.length;i++) {
-  
-    var ascii = codigo[i].charCodeAt()
-  
-  if (ascii > 64 && ascii < 91) {
-    var palavraincrementada = ( ascii + incremento);
-    var codificada = String.fromCharCode(palavraincrementada);
-    document.write(codificada)
-  } else if (ascii > 96 && ascii < 123) {
-    var palavraincrementada = ( ascii + incremento);
-    var codificada = String.fromCharCode(palavraincrementada);
-    document.write(codificada)
-  } else {
-    document.write(codigo[i]);
-  }
+    var palavra = document.getElementById('msg').value
+   var numeroEscolhido = document.getElementById('number').value;
+for (i=0;i<palavra.length;i++) {
+   var ascii = palavra[i].charCodeAt()
+    if (ascii > 64 && ascii < 91) {
+   var palavraincrementada = ( ascii + numeroEscolhido);
+    var codificada = String.fromCharCode(palavraincrementada); 
+  resultado.innerText += (codificada);
+} else if (ascii > 96 && ascii < 123) {
+   var palavraincrementada = ( ascii + numeroEscolhido);
+    var codificada = String.fromCharCode(palavraincrementada); 
+  resultado.innerText += (codificada);
+} else {
+  resultado.innerText += (palavra[i]);
+}
+}
 }
 
 function decCesar () {
-        var codigo = document.getElementById('msg').value;
-    var incremento = incremento.value
-
-for (i=0;i<codigo.length;i++) {
-  
-    var ascii = codigo[i].charCodeAt()
-  
-  if (ascii > 64 && ascii < 91) {
-    var palavraincrementada = ( ascii - incremento);
-    var codificada = String.fromCharCode(palavraincrementada);
-    document.write(codificada)
-  } else if (ascii > 96 && ascii < 123) {
-    var palavraincrementada = ( ascii - incremento);
-    var codificada = String.fromCharCode(palavraincrementada);
-    document.write(codificada)
-  } else {
-    document.write(codigo[i]);
-  }
+  var palavra = document.getElementById('msg').value
+   var numeroEscolhido = document.getElementById('number').value;
+for (i=0;i<palavra.length;i++) {
+   var ascii = palavra[i].charCodeAt()
+    if (ascii > 64 && ascii < 91) {
+   var palavraincrementada = ( ascii - numeroEscolhido);
+    var codificada = String.fromCharCode(palavraincrementada); 
+  resultado.innerText += (codificada);
+} else if (ascii > 96 && ascii < 123) {
+   var palavraincrementada = ( ascii - numeroEscolhido);
+    var codificada = String.fromCharCode(palavraincrementada); 
+  resultado.innerText += (codificada);
+} else {
+  resultado.innerText += (palavra[i]);
+}
+}
 }
 //Aparecer mensagem codificada e decodificada
 //Codificada
@@ -98,10 +94,10 @@ botaocod.addEventListener('click', function(e){
     e.preventDefault();
     if(codificar.checked && codigo.value === "base"){
         resultado.innerText = codBase64();
-        resultado.style.display = 'block'
+        resultado.style.display = 'flex'
     } else if(codificar.checked && codigo.value === "cifra"){
-        resultado.innerHTML = codCesar();
-        resultado.style.display = 'block'
+        resultado.innerText = codCesar();
+        resultado.style.display = 'flex'
        
         }
     })
@@ -111,9 +107,9 @@ botaodecod.addEventListener('click', function(f) {
     f.preventDefault();
     if(decodificar.checked && codigo.value === "cifra"){
         resultado.innerText = decCesar();
-        resultado.style.display = 'block'
+        resultado.style.display = 'flex'
     } else if(decodificar.checked && codigo.value === "base"){
         resultado.innerText = decBase64();
-        resultado.style.display = 'block'
+        resultado.style.display = 'flex'
     }
 })
