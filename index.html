@@ -9,11 +9,9 @@
 <body>
     <form>
     <div id=conteiner>
-        <div id=mensagem>
-        <label for="txt"><h2>Escreva sua mensagem:</h2></label>
+      <label for="txt"><h2>Codifique sua mensagem:</h2></label>
         <br>
         <input type="text" id="msg">
-    </div>
         <div id=box>
             <br>
             <select name = codigo id = codigo>
@@ -22,23 +20,19 @@
             <option value = cifra>Cifra de Cesar</option>
             </select>
         </div>
-        <div id=numero>
+      <div id = "numero">
         <input type="number" id="number">
-    </div>
+      </div>
         <div id="box0">
         <input type="radio" id="codifi" name="cod2">
         <label for="cod">Codificar</label>
         <input type="radio" id="decodifi" name="cod2">
         <label for="dec">Decodificar</label>
         </div>
-    
         <input type="submit" id="buttoncod" value="Codificar">
         <input type="submit" id="buttondecod" value="Decodificar">
-    
-    
         <textarea name="msg2" id="resultado">
         </textarea>
-    
     </form>
     </div> 
     <script src="js/script.js"></script>
