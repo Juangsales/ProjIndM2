@@ -8,7 +8,7 @@ msg.addEventListener('click', function() {
 })
 
 //Aparecer incremento para Cifra e os radios para ambos 
-var incremento = document.getElementById('number')
+var incremento = document.getElementById('numero')
 var codiedecodi = document.getElementById('box0')
 var incrementar = metodo.addEventListener('click', function(){
     var codigo = document.getElementById('codigo').value
