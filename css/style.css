@@ -11,30 +11,32 @@ h2 {
 
 }
 #conteiner {
+  display: grid;
   padding: 20px;
   background-color: hsl(220deg 100% 72%);
   border-radius: 25px;
   box-shadow: 2.2px 4.3px 4.3px hsl(0deg 0% 0% / 43%);
+  justify-items: center;
 }
 
 #numero {
   display: none;
   text-align: center;
   padding-top: 20px;
-  margin-left: 30px;
+  
 }
 #buttoncod {
   display: none;
   text-align: center;
   margin-top: 20px;
-  margin-left: 35%;
+  
   
 }
 #buttondecod {
   display: none;
   text-align: center;
   margin-top: 20px;
-  margin-left: 35%;
+ 
   
 }
 #box0 {
@@ -49,7 +51,7 @@ h2 {
   display: none;
   text-align: center;
   margin-top: 10%;
-  margin-left: 36px;
+  
 }
 
 #box {
