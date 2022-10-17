@@ -1,7 +1,8 @@
 
 // Aparecer caixa de seleção para o metodo
-
+var numeroEscolhido = document.getElementById('number').value
 var msg = document.getElementById('msg')
+var palavra = msg.value
 var metodo = document.getElementById('box')
 msg.addEventListener('click', function() {
     metodo.style.display = 'flex';
@@ -53,38 +54,39 @@ function codCesar() {
     var palavra = document.getElementById('msg').value
    var numeroEscolhido = document.getElementById('number').value;
 for (i=0;i<palavra.length;i++) {
+
    var ascii = palavra[i].charCodeAt()
     if (ascii > 64 && ascii < 91) {
    var palavraincrementada = ( ascii + numeroEscolhido);
     var codificada = String.fromCharCode(palavraincrementada); 
-  resultado.innerText += (codificada);
+  resultado.innerHTML +=  codificada;
 } else if (ascii > 96 && ascii < 123) {
    var palavraincrementada = ( ascii + numeroEscolhido);
     var codificada = String.fromCharCode(palavraincrementada); 
-  resultado.innerText += (codificada);
+ resultado.innerHTML += codificada
 } else {
-  resultado.innerText += (palavra[i]);
+ resultado.innerHTML +=  (palavra[i])
 }
+} 
 }
-}
-
 function decCesar () {
   var palavra = document.getElementById('msg').value
    var numeroEscolhido = document.getElementById('number').value;
 for (i=0;i<palavra.length;i++) {
+
    var ascii = palavra[i].charCodeAt()
     if (ascii > 64 && ascii < 91) {
    var palavraincrementada = ( ascii - numeroEscolhido);
     var codificada = String.fromCharCode(palavraincrementada); 
-  resultado.innerText += (codificada);
+  resultado.innerHTML +=  codificada;
 } else if (ascii > 96 && ascii < 123) {
    var palavraincrementada = ( ascii - numeroEscolhido);
     var codificada = String.fromCharCode(palavraincrementada); 
-  resultado.innerText += (codificada);
+ resultado.innerHTML += codificada
 } else {
-  resultado.innerText += (palavra[i]);
+ resultado.innerHTML +=  (palavra[i])
 }
-}
+} 
 }
 //Aparecer mensagem codificada e decodificada
 //Codificada
@@ -96,9 +98,8 @@ botaocod.addEventListener('click', function(e){
         resultado.innerText = codBase64();
         resultado.style.display = 'flex'
     } else if(codificar.checked && codigo.value === "cifra"){
-        resultado.innerText = codCesar();
-        resultado.style.display = 'flex'
-       
+      resultado.style.display = 'block'
+      codCesar()
         }
     })
 //Decodificada
@@ -106,8 +107,8 @@ botaocod.addEventListener('click', function(e){
 botaodecod.addEventListener('click', function(f) {
     f.preventDefault();
     if(decodificar.checked && codigo.value === "cifra"){
-        resultado.innerText = decCesar();
-        resultado.style.display = 'flex'
+        resultado.style.display = 'block'
+      decCesar();
     } else if(decodificar.checked && codigo.value === "base"){
         resultado.innerText = decBase64();
         resultado.style.display = 'flex'
