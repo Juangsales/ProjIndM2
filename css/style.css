@@ -7,7 +7,7 @@ body {
 }
 h2 {
   text-align: center;
-  margin-bottom: 0;
+  
 
 }
 #conteiner {
@@ -60,7 +60,6 @@ h2 {
   padding-top: 20px;
 }
 #msg {
-  margin-left: 30px;
   text-align: center;
 }
 #number {
