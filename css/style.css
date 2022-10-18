@@ -7,8 +7,11 @@ body {
 }
 h2 {
   text-align: center;
-  
+  text-shadow: 2px 14px 4px #0000007a;
 
+}
+h3 {
+  text-shadow: 2px 14px 4px #0000007a;
 }
 #conteiner {
   display: grid;
@@ -22,7 +25,6 @@ h2 {
 #numero {
   display: none;
   text-align: center;
-  padding-top: 20px;
   
 }
 #buttoncod {
@@ -64,4 +66,5 @@ h2 {
 }
 #number {
   text-align: center;
+  width: 50;
 }
